@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="The Best USDT Returns! Earn 5% - 10% Daily! ">
+    <link rel="apple-touch-icon" href="logo192.html">
+    <link rel="manifest" href="manifest.json">
+    <title>Hen Hatch | Earn 5% - 10% Daily</title>
+    <link href="static/css/main.ee19e6e0.css" rel="stylesheet">
+    <link href="static/css/main.2b197720.chunk.css" rel="stylesheet">
+    
+    <style>
+        /* Navigation Bar Styles */
+        .navbar {
+            background: linear-gradient(160deg, #1a1c24 0%, #2d2f36 100%);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+        
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: Montserrat, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            background: linear-gradient(160deg, #f05123 0%, #e7860d 100%);
+            color: #000;
+        }
+        
+        /* --- New Launch Countdown Styles --- */
+        .launch-countdown-wrapper {
+            text-align: center;
+            margin: 20px auto;
+            font-family: Montserrat, sans-serif;
+            font-weight: 500;
+        }
+        
+        .launch-title {
+            color: #ffffff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .launch-timer {
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        
+        .highlight-yellow {
+            color: #f7b731; 
+        }
+
+        /* --- Welcome Bonus Link & Modal Styles --- */
+        .app__bonusbutton {
+            background: linear-gradient(currentColor 0 0) bottom /0 1px no-repeat;
+            background: linear-gradient(currentColor 0 0) bottom /var(--d,0) 1px no-repeat;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px auto;
+            text-decoration: none;
+            text-shadow: 1px 1px #22272a;
+            transition: .35s;
+            width: fit-content;
+        }
+
+        .app__bonusbutton>img {
+            margin-left: 12px;
+            overflow-clip-margin: content-box;
+            overflow: clip;
+        }
+
+        .app__bonusbutton:hover {
+            --d: 100%;
+            color: #f7b731;
+        }
+
+        .app__bonusmodal {
+            align-items: center;
+            background-color: rgba(0,0,0,.9);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+
+        .app__bonusmodalmargin {
+            margin-bottom: 70px;
+            margin-top: 70px;
+            overflow-y: auto;
+            width: 70%;
+            max-width: 800px;
+        }
+
+        .app__bonusmodalmargin::-webkit-scrollbar {
+            width: 8px;
+        }
+        .app__bonusmodalmargin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .app__bonusmodalmargin::-webkit-scrollbar-thumb {
+            background: #4b5573;
+            border-radius: 8px;
+        }
+
+        .app__bonusmodalmargin>h5 {
+            color: #f7b731;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .app__bonusmodalmargin>h6 {
+            color: #f7b731;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .app__bonusmodalmargin>h6>span {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .app__bonusmodalmargin>p {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .app__bonusmodalmargin>p>a {
+            background: linear-gradient(90deg,currentColor 33.33333%,transparent 0 66.66667%,currentColor 0) 0 100% /300% 1px no-repeat;
+            background: linear-gradient(90deg,currentColor 33.33333%,transparent 0 66.66667%,currentColor 0) var(--d,0) 100% /300% 1px no-repeat;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: .5s;
+        }
+
+        .app__bonusmodalmargin>p>a:hover {
+            --d: 100%;
+            color: #f7b731;
+        }
+
+        .app__bonusmodalclose {
+            background-color: #f7b731;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            cursor: pointer;
+            font-weight: 600;
+            outline: none;
+            padding: 8px 16px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            transition: .35s;
+        }
+
+        .app__bonusmodalclose:hover {
+            -webkit-transform: scale(.98);
+            transform: scale(.98);
+            background-color: #e5a62b;
+        }
+        
+        /* FAQ Modal Styles */
+        .faq-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(3px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .faq-modal.active {
+            opacity: 1;
+        }
+        
+        .faq-modal-content {
+            background-color: #1b1e25;
+            color: #d1d5db;
+            width: 90%;
+            max-width: 650px;
+            max-height: 85vh;
+            border-radius: 15px;
+            padding: 30px 20px;
+            position: relative;
+            overflow-y: auto;
+            box-sizing: border-box;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+       
+        .faq-modal.active .faq-modal-content {
+            transform: translateY(0);
+        }
+        
+        .faq-modal-content::-webkit-scrollbar { width: 8px; }
+        .faq-modal-content::-webkit-scrollbar-track { background: #2c3142; border-radius: 8px; }
+        .faq-modal-content::-webkit-scrollbar-thumb { background: #4b5573; border-radius: 8px; }
+        
+        .faq-close-btn {
+            color: #9ca3af;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+        
+        .faq-close-btn:hover { color: #ffffff; }
+        
+        .faq-title {
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.7em;
+            margin-bottom: 30px;
+            font-family: "Akshar", sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .faq-list { display: flex; flex-direction: column; gap: 25px }
+        .faq-item { text-align: center; padding-bottom: 20px; }
+        .faq-item>section {
+            background-color: #3b4252;
+            padding: 15px;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+        .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+        
+        .faq-question {
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .faq-answer { color: #cbd5e1; font-size: 1em; line-height: 1.6; }
+        .faq-answer p { margin-bottom: 8px; }
+        .highlight-blue { color: #60a5fa; }
+        
+        /* ROI Calculator Modal Styles */
+        .roi-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .roi-modal-container {
+            background-color: #353945;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 420px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .roi-modal-container::-webkit-scrollbar { width: 8px; }
+        .roi-modal-container::-webkit-scrollbar-track { background: #2c303a; border-radius: 8px; }
+        .roi-modal-container::-webkit-scrollbar-thumb { background: #4b5573; border-radius: 8px; }
+        
+        .roi-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #b0b3c5;
+        }
+        
+        .roi-header-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4a4e5e;
+            padding: 6px;
+            border-radius: 8px;
+            color: #fff;
+        }
+        
+        .roi-close-btn {
+            background: transparent;
+            border: none;
+            color: #b0b3c5;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .roi-close-btn:hover { color: #ffffff; }
+        
+        .roi-modal-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .roi-input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2c303a;
+            border-radius: 12px;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+        }
+        
+        .roi-input-group label { font-size: 1rem; color: #e0e0e0; flex-shrink: 0; }
+        
+        .roi-input-group select,
+        .roi-input-group input {
+            background-color: #3e4453;
+            border: none;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 10px 12px;
+            border-radius: 8px;
+            outline: none;
+            width: 60%;
+            text-align: left;
+        }
+        .roi-input-group select { cursor: pointer; appearance: none; }
+        .roi-currency-label { font-size: 1rem; color: #e0e0e0; margin-left: 12px; }
+        
+        .roi-results-container { text-align: center; margin: 24px 0; line-height: 1.8; font-size: 1.05rem; }
+        .roi-results-container p { color: #e0e0e0; }
+        .roi-info-box {
+            background-color: #434858;
+            color: #d1d4e0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        #calculator-button { background-color: #4b5573; border-radius: 0; height: 24px; padding: 0; width: 24px; }
+        #calculator-button img { display: block; height: auto; width: 100%; }
+        
+        @media screen and (max-width: 480px) {
+            .navbar { gap: 10px; padding: 10px; }
+            .navbar a { font-size: 12px; padding: 6px 10px; }
+            .faq-modal-content, .roi-modal-container { width: 95%; padding: 20px 15px; }
+            .app__bonusmodalmargin { width: 90%; }
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <nav class="navbar" id="mainNavbar">
+        <a href="#" id="faqLink">FAQ</a>
+        <a href="#" id="roiLink">ROI Calc.</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955" target="_blank" rel="noopener noreferrer"><span><svg viewBox="0 0 198 199" width="24px" height="18px" color="text" xmlns="http://www.w3.org/2000/svg" style="display:inline"><path fill-rule="evenodd" clip-rule="evenodd" d="M98.552 198.607c-29.49-.022-53.246-7.027-69.844-19.609C11.91 166.265 3 148.195 3 127.748c0-19.701 8.891-33.907 18.952-43.51 7.884-7.525 16.584-12.344 22.642-15.117-1.37-4.162-3.079-9.61-4.608-15.238-2.046-7.53-4.053-16.366-4.053-22.84 0-7.663 1.687-15.36 6.238-21.34C46.98 3.385 54.218 0 62.926 0c6.806 0 12.584 2.499 17.108 6.81 4.324 4.12 7.202 9.593 9.189 15.298 3.491 10.024 4.85 22.618 5.232 35.187h8.341c.382-12.569 1.741-25.163 5.233-35.187 1.987-5.705 4.865-11.177 9.189-15.298C121.741 2.5 127.519 0 134.325 0c8.708 0 15.947 3.385 20.755 9.703 4.551 5.98 6.239 13.677 6.239 21.34 0 6.474-2.007 15.31-4.054 22.84-1.529 5.628-3.238 11.076-4.608 15.238 6.058 2.773 14.759 7.592 22.643 15.118 10.06 9.602 18.952 23.808 18.952 43.509 0 20.447-8.911 38.517-25.708 51.25-16.598 12.582-40.354 19.587-69.844 19.609h-.148z" fill="#633001"></path><path d="M62.926 7.288c-12.754 0-18.626 9.516-18.626 22.675 0 10.46 6.822 31.408 9.621 39.563.63 1.835-.36 3.844-2.164 4.555-10.222 4.031-40.39 18.789-40.39 52.588 0 35.603 30.658 62.448 87.191 62.49h.135c56.534-.042 87.19-26.887 87.19-62.49 0-33.799-30.167-48.557-40.389-52.588-1.804-.71-2.794-2.72-2.164-4.555 2.799-8.154 9.621-29.103 9.621-39.563 0-13.16-5.871-22.675-18.626-22.675-18.36 0-22.936 26.007-23.263 53.92-.022 1.863-1.528 3.375-3.392 3.375H89.58c-1.863 0-3.37-1.512-3.391-3.375-.326-27.913-4.903-53.92-23.263-53.92z" fill="#D1884F"></path><path d="M98.693 177.755c-41.538 0-87.253-22.235-87.325-51.018v.134c0 35.632 30.705 62.491 87.325 62.491 56.62 0 87.325-26.859 87.325-62.491v-.134c-.072 28.783-45.787 51.018-87.325 51.018z" fill="#FEDC90"></path><path class="eye" d="M75.614 117.896c0 9.718-4.593 14.779-10.258 14.779-5.665 0-10.258-5.061-10.258-14.779s4.593-14.779 10.258-14.779c5.665 0 10.258 5.061 10.258 14.779zM142.288 117.896c0 9.718-4.592 14.779-10.257 14.779-5.666 0-10.258-5.061-10.258-14.779s4.592-14.779 10.258-14.779c5.665 0 10.257 5.061 10.257 14.779z" fill="#633001"></path></svg></span> Buy USDT</a>
+        <a href="static/media/How To Play.pdf" target="_blank">How To Play</a>
+    </nav>
+    
+    <div id="faqModal" class="faq-modal" role="dialog" aria-modal="true">
+        <div class="faq-modal-content">
+            <span class="faq-close-btn" aria-label="Close modal">&times;</span>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Why can't I connect my wallet?</div>
+                    <div class="faq-answer">
+                        <p>Metamask is recommended when using the site. You must use Metamask mobile or another supported wallet to access the site on mobile. Trust wallet is also recommended as it's easier for some users</p>
+                        <p>If you are stuck on the "Connect" button, try disabling other crypto wallet extensions. They can interfere with the connection to the site.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What is the price of Hens?</div>
+                    <div class="faq-answer">
+                        <p>Hens do not have a set price. Higher TVL more Hens per USDT BEP20 | Lower TVL less Hens This creates a level playing field so no user can be late There is NO calculator available to work this out.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What will my daily percentage be?</div>
+                    <div class="faq-answer">
+                        <p>Daily percentage is up to 10%. It depends on your compounding habits, the time of day you compound, and the TVL.</p>
+                        <p>The average daily return is 4-10% if you compound 6 days and claim 1 day.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Why are my rewards not growing?</div>
+                    <div class="faq-answer">
+                        <p>Claiming too frequently will decrease your daily percentage.</p>
+                        <p>We recommend a 6 to 1 compounding schedule (compound 6 days, claim 1 day) to maximize your returns.</p>
+                        <p class="highlight-blue">Note: They depend on your current percentage.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What happens if I always claim?</div>
+                    <div class="faq-answer">
+                        <p>If you always claim your daily percentage will drop dramatically and will not receive the highest daily returns.</p>
+                        <p>This is the anti-whale mechanism that helps so the TVL is not drained.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Is compounding more often better, 2 or 3 times a day?</div>
+                    <div class="faq-answer">
+                        <p>Yes. You will need to pay standard BSC gas fees for every compound.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What are "Hens"?</div>
+                    <div class="faq-answer">
+                        <p>Hens are the miners that are hired with USDT-BEP20 and work to get your rewards.</p>
+                        <p>This is just a term we decided to use.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Can I get my initial back?</div>
+                    <div class="faq-answer">
+                        <p>Hen Hatch miner is a locked rewards pool, so no. You get your initial back over time, ususally from 10 to 28 days, through the my rewards section of the dapp.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What are the fees?</div>
+                    <div class="faq-answer">
+                        <p>There is 6% dev fee taken upon ALL buys and 8% on sells from Hen Hatch Miner.</p>
+                        <p>Standard BSC network gas fees are required for EVERY transaction made deposits withdraws and compound!</p>
+                        <p class="highlight-blue">* Common issue when compounding is not enough BNB for the gas fee.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Do Hens amount decrease when you claim?</div>
+                    <div class="faq-answer">
+                        <p>No, the 'Hens' amount will not change. If you make a new deposit or compound the amount will increase but not when you claim (take rewards).</p>
+                        <p>The 'Hens' are less efficient over time if you claim too much..</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Is this sustainable?</div>
+                    <div class="faq-answer">
+                        <p>Yes, as long as there is TVL in the contract then there will always be rewards.</p>
+                        <p>The people that claim to much get punished and get lower and lower rewards. It will last a long time the higher the TVL is.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What prevents the devs from rugging?</div>
+                    <div class="faq-answer">
+                        <p>The contract is immutable. Therefore cannot be changed or altered in any way shape or form.</p>
+                        <p>The contract has been verified and can be viewed at BSC Scan.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Is it too late to invest?</div>
+                    <div class="faq-answer">
+                        <p>No, the contract is written to provide an optimal entry for any and all users, new or old.</p>
+                        <p>This is the reason the Hens per USDT amount changes frequently with TVL fluctuation to provide an even playing field for any new user coming to Hen Hatch and not giving the first user a head start.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Can contract functions be added?</div>
+                    <div class="faq-answer">
+                        <p>No, the contract is immutable and cannot be changed. The contract works perfectly well as it is.</p>
+                        <p>No wallets can be blacklisted, no forcing people to compound days and claim 1 day a week. Nothing can be changed.</p>
+                    </div></section>
+                </div>
+                 <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What is the minimum deposit?</div>
+                    <div class="faq-answer">
+                        <p>The minimum new deposit into the miner is 10 USDT (BEP20)</p>
+                        <p>If there are rewards in the "My Rewards" section and you make a new deposit both the new deposit and rewards are transferred into Hens.</p>
+                    </div></section>
+                </div>
+                 <div class="faq-item">
+                    <section>
+                    <div class="faq-question">What is minimum compound and minimum withdrawal?</div>
+                    <div class="faq-answer">
+                        <p>The minimum compound is 1 Egg. You will always be charged standard BSC BEP20 gas fees for every interaction with the contract.</p>
+                        <p>There is <span style="font-weight: bold;">no minimum withdrawal</span> but note that gas fees may apply.</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">Does it have am anti whale mechanism?</div>
+                    <div class="faq-answer">
+                        <p>The contract has an in-built anti-whale mechanism.</p>
+                        <p>This works as follows; User 1 compounds 6:1 gets highest daily percentage in that 24 hour period. User 2 does 5:2 gets a lower percentage. User 3 does 4:3 and gets an even lower percentage again.</p>
+                        <p>This will continue dropping until the user's rewards drop to 0.5% per 24 hour period. This is to prevent 1 user draining the TVL, creating sustainability</p>
+                    </div></section>
+                </div>
+                <div class="faq-item">
+                    <section>
+                    <div class="faq-question">* Disclaimer</div>
+                    <div class="faq-answer">
+                        <p>We DO NOT guarantee 10% a day it is up to 10% Hen Hatch.</p>
+                        <p>Crypto/Defi is illegal in certain countries please consider this when investing. Do not invest more than you can afford to lose.</p>
+                    </div></section>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="roiModal" class="roi-modal">
+        <div class="roi-modal-container">
+            <div class="roi-modal-header">
+                <div class="roi-header-icon">
+                <button id="calculator-button"><img alt="calculator icon" src="static/media/calculator.png"></button></div>
+                <button class="roi-close-btn" id="closeRoiModal">&times;</button>
+            </div>
+
+            <h2 class="roi-modal-title">ROI Calculator</h2>
+
+            <div class="roi-input-group">
+                <label for="protocolSelect">Protocol</label>
+                <select id="protocolSelect">
+                    <option value="6:1">6:1</option>
+                </select>
+            </div>
+
+            <div class="roi-input-group">
+                <label for="initialAmount">Initial</label>
+                <input type="number" id="initialAmount" value="1000">
+                <span class="roi-currency-label">USDT</span>
+            </div>
+
+            <div class="roi-results-container">
+                <p>Weekly Claim: <span id="weeklyClaim">$177.16</span></p>
+                <p>Monthly Claim: <span id="monthlyClaim">$2,032.07</span></p>
+                <p>Days To ROI: <span id="roiDays">28</span></p>
+                <p>Day 29 Earnings: <span id="day29Earnings">$985.05</span></p>
+            </div>
+
+            <div class="roi-info-box">
+                This is based on compounding 6 days, followed by claiming 1 day at 10% daily interest.
+            </div>
+            <div class="roi-info-box">
+                "Day 29 Earnings" is based on the current value of the Eggs.
+            </div>
+            <div class="roi-info-box">
+                * Please note, this is based on the current value of Eggs, so the values can change over time.
+            </div>
+        </div>
+    </div>
+
+    <div id="bonusModal" class="app__bonusmodal" style="display: none;">
+        <button class="app__bonusmodalclose" id="closeBonusModal">Close</button>
+        <div class="app__bonusmodalmargin">
+            <h5>Welcome Bonus Campaign!</h5>
+            <p>Earn up to 250 USDT just for getting started!</p>
+            <h6>Who is this for?</h6>
+            <p>New users who deposit 2,500+ USDT and actively compound for at least 3 days (72 hours).</p>
+            <h6>How it works</h6>
+            <p><span style="color: rgb(232, 65, 66); font-weight: 600; font-size: 16px;">Prize pool:</span> Be among the first 5 wallets to qualify and receive a bonus reward from our $1,000 USDT prize pool.</p>
+            <h6>Campaign Start: <span>May 8, 2026</span></h6>
+            <h6>Campaign End: <span>May 14, 2026</span></h6>
+            <h6>Eligibility Requirements</h6>
+            <ul style="color: #fff;">
+                <li style="list-style: circle;">Deposit <span style="font-weight: bold;">2,500+ USDT</span></li>
+                <li style="list-style: circle;">Maintain and compound your deposit (Hatch Eggs) for a minimum of <span style="font-weight: bold;">72 hours</span></li>
+                <li style="list-style: circle;">Only the <span style="font-weight: bold;">first 5 qualifying wallets</span> will receive rewards</li>
+            </ul>
+            <h6>Reward Structure:</h6>
+            <p>🥇 1st  —  250 USDT<br>🥈 2nd  —  225 USDT<br>🥉 3rd  —  200 USDT<br>4th  —  175 USDT<br>5th  —  150 USDT<br></p>
+            <h6>Important Notes &amp; Rules:</h6>
+            <p>• Bonus is <span style="font-weight: bold;">not part of trading returns</span><br>• Rewards are distributed based on <span style="font-weight: bold;">qualification order (first come, first served)</span><br> • Terms & conditions apply. Check our FAQ and (<a href="static/media/How To Play.pdf" rel="noreferrer" target="_top">https://www.henhatch.fun/get-started</a>) For info on How to Get Started.<br>• Submit your queries to <a href="https://t.me/silvalizer" rel="noreferrer" target="_blank">@Silvalizer</a> on TG.</p>
+        </div>
+    </div>
+
+<div id="root"></div>
+
+<script>
+    // DOM Elements
+    const faqModal = document.getElementById("faqModal");
+    const faqLink = document.getElementById("faqLink");
+    const faqCloseBtn = document.querySelector(".faq-close-btn");
+
+    const roiModal = document.getElementById('roiModal');
+    const roiLink = document.getElementById('roiLink'); 
+    const closeRoiModal = document.getElementById('closeRoiModal');
+    
+    // New Bonus Modal Elements
+    const bonusModal = document.getElementById("bonusModal");
+    const closeBonusModal = document.getElementById("closeBonusModal");
+
+    const htpModal = document.getElementById("htpModal");
+    const htpLink = document.getElementById("htpLink"); 
+    const htpCloseBtn = document.querySelector(".htp-close-btn");
+
+    const initialInput = document.getElementById('initialAmount');
+    const outWeekly = document.getElementById('weeklyClaim');
+    const outMonthly = document.getElementById('monthlyClaim');
+    const outRoiDays = document.getElementById('roiDays');
+    const outDay29 = document.getElementById('day29Earnings');
+
+    // --- Modal Openers ---
+    if(faqLink) {
+        faqLink.onclick = function(e) {
+            e.preventDefault();
+            faqModal.style.display = "flex";
+            setTimeout(() => faqModal.classList.add("active"), 10);
+        }
+    }
+
+    if(roiLink) {
+        roiLink.onclick = function(e) {
+            e.preventDefault();
+            roiModal.style.display = 'flex';
+            calculateROI();
+        }
+    }
+
+    if(htpLink) {
+        htpLink.onclick = function(e) {
+            e.preventDefault();
+            if(htpModal) htpModal.style.display = "flex";
+        }
+    }
+
+    // --- Modal Closers (Buttons) ---
+    if(faqCloseBtn) {
+        faqCloseBtn.onclick = function() {
+            faqModal.classList.remove("active");
+            setTimeout(() => faqModal.style.display = "none", 300);
+        }
+    }
+
+    if(closeRoiModal) {
+        closeRoiModal.onclick = function() {
+            roiModal.style.display = 'none';
+        }
+    }
+
+    if(closeBonusModal) {
+        closeBonusModal.onclick = function() {
+            bonusModal.style.display = 'none';
+        }
+    }
+
+    if(htpCloseBtn) {
+        htpCloseBtn.onclick = function() {
+            if(htpModal) htpModal.style.display = "none";
+        }
+    }
+
+    // --- Consolidated Outside Click Handler ---
+    window.onclick = function(event) {
+        if (faqModal && event.target === faqModal) {
+            faqModal.classList.remove("active");
+            setTimeout(() => faqModal.style.display = "none", 300);
+        }
+        if (roiModal && event.target === roiModal) {
+            roiModal.style.display = 'none';
+        }
+        if (bonusModal && event.target === bonusModal) {
+            bonusModal.style.display = 'none';
+        }
+        if (htpModal && event.target === htpModal) {
+            htpModal.style.display = "none";
+        }
+    }
+
+    // --- Consolidated Escape Key Handler ---
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            if (faqModal && faqModal.style.display === "flex") {
+                faqModal.classList.remove("active");
+                setTimeout(() => faqModal.style.display = "none", 300);
+            }
+            if (roiModal && roiModal.style.display === "flex") {
+                roiModal.style.display = "none";
+            }
+            if (bonusModal && bonusModal.style.display === "flex") {
+                bonusModal.style.display = "none";
+            }
+            if (htpModal && htpModal.style.display === "flex") {
+                htpModal.style.display = "none";
+            }
+        }
+    });
+
+    // --- ROI Calculation Logic ---
+    function calculateROI() {
+        const amount = parseFloat(initialInput.value) || 0;
+        const dailyRate = 0.10; // 10% Daily Interest
+        
+        let balance = amount;
+        let totalClaimed = 0;
+        let roiDays = "28+"; 
+        let roiReached = false;
+        let monthlyClaim = 0;
+        
+        // Simulate 4 weeks (28 days) of the 6:1 Protocol
+        for (let week = 1; week <= 4; week++) {
+            balance = balance * Math.pow(1 + dailyRate, 6);
+            
+            let weeklyClaimAmount = balance * dailyRate;
+            totalClaimed += weeklyClaimAmount;
+            monthlyClaim += weeklyClaimAmount;
+            
+            if (!roiReached && totalClaimed >= amount) {
+                roiDays = week * 7;
+                roiReached = true;
+            }
+        }
+        
+        const week1Claim = (amount * Math.pow(1 + dailyRate, 6)) * dailyRate;
+        const day29Earnings = balance * dailyRate;
+        
+        outWeekly.textContent = '$' + week1Claim.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        outMonthly.textContent = '$' + monthlyClaim.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        outRoiDays.textContent = amount > 0 ? roiDays : 0;
+        outDay29.textContent = '$' + day29Earnings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+    
+    if(initialInput) {
+        initialInput.addEventListener('input', calculateROI);
+    }
+</script>
+    
+    <script>!function (e) { function r(r) { for (var n, l, f = r[0], i = r[1], a = r[2], c = 0, s = []; c < f.length; c++)l = f[c], Object.prototype.hasOwnProperty.call(o, l) && o[l] && s.push(o[l][0]), o[l] = 0; for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]); for (p && p(r); s.length;)s.shift()(); return u.push.apply(u, a || []), t() } function t() { for (var e, r = 0; r < u.length; r++) { for (var t = u[r], n = !0, f = 1; f < t.length; f++) { var i = t[f]; 0 !== o[i] && (n = !1) } n && (u.splice(r--, 1), e = l(l.s = t[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function l(r) { if (n[r]) return n[r].exports; var t = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(t.exports, t, t.exports, l), t.l = !0, t.exports } l.m = e, l.c = n, l.d = function (e, r, t) { l.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, l.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, l.t = function (e, r) { if (1 & r && (e = l(e)), 8 & r) return e; if (4 & r && "object" == typeof e && e && e.__esModule) return e; var t = Object.create(null); if (l.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: e }), 2 & r && "string" != typeof e) for (var n in e) l.d(t, n, function (r) { return e[r] }.bind(null, n)); return t }, l.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return l.d(r, "a", r), r }, l.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, l.p = "index.html"; var f = this.webpackJsonpnew = this.webpackJsonpnew || [], i = f.push.bind(f); f.push = r, f = f.slice(); for (var a = 0; a < f.length; a++)r(f[a]); var p = i; t() }([])</script>
+    <script src="static/js/2.60b7bb00.chunk.js"></script>
+    <script src="static/js/main.444594ec.chunk.js"></script>
+    
+    <script>
+        (function() {
+            // Function to inject countdown timer
+            function injectModifications() {
+                if (document.getElementById('countdownTimer')) return;
+
+                const allElements = document.querySelectorAll('*');
+                let targetElement = null;
+                
+                for (let el of allElements) {
+                    if (el.children.length === 0 && el.textContent) {
+                        if (el.textContent.includes('Hen Hatch is a locked USDT static rewards pool returning up to 10% daily')) {
+                            targetElement = el;
+                            break;
+                        }
+                    }
+                }
+                
+                if (targetElement && targetElement.parentNode) {
+                    const countdownHTML = `
+                        <div class="launch-countdown-wrapper" id="countdownTimer">
+                            <div class="launch-title">LAUNCHES <span class="highlight-yellow">MAY 8, 2026 - 15:00 UTC</span></div>
+                            <div class="launch-timer">
+                                <span class="highlight-yellow" id="countdownHours">--</span> hours, 
+                                <span class="highlight-yellow" id="countdownMinutes">--</span> minutes, 
+                                <span class="highlight-yellow" id="countdownSeconds">--</span> seconds
+                            </div>
+                        </div>
+                    `;
+                    
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = countdownHTML;
+                    targetElement.parentNode.insertBefore(tempDiv.firstElementChild, targetElement.nextSibling);
+                    
+                    startCountdown();
+                }
+            }
+            
+            // Countdown timer function
+            function startCountdown() {
+                // Target set to 15:00 UTC, 8th May 2026
+                const targetTime = new Date("2026-05-08T15:00:00Z").getTime(); 
+                const timerInterval = setInterval(updateTimer, 1000);
+
+                function updateTimer() {
+                    const now = new Date().getTime();
+                    const distance = targetTime - now;
+                    
+                    if (distance <= 0) {
+                        clearInterval(timerInterval);
+                        const timerContainer = document.getElementById('countdownTimer');
+                        
+                        if(timerContainer) {
+                            timerContainer.style.background = 'transparent';
+                            timerContainer.style.border = 'none';
+                            timerContainer.style.padding = '0';
+                            
+                            // Inject Welcome Bonus Link when time expires
+                            timerContainer.innerHTML = `
+                                <div>
+                                    <span class="app__bonusbutton" id="bonusLink">
+                                        WELCOME BONUS!
+                                        <img src="static/media/arrow.49cbe85c0618f6c3ae76.gif" width="38px" alt="Arrow">
+                                        
+                                    </span>
+                                </div>
+                            `;
+
+                            // Attach modal trigger to the new link
+                            const bonusLinkBtn = document.getElementById('bonusLink');
+                            const bonusModalEl = document.getElementById('bonusModal');
+                            if(bonusLinkBtn && bonusModalEl) {
+                                bonusLinkBtn.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    bonusModalEl.style.display = 'flex';
+                                });
+                            }
+                        }
+                        return;
+                    }
+                    
+                    // Display calculation logic
+                    const hours = Math.floor(distance / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    const hoursEl = document.getElementById('countdownHours');
+                    const minutesEl = document.getElementById('countdownMinutes');
+                    const secondsEl = document.getElementById('countdownSeconds');
+                    
+                    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+                    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+                    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+                }
+                
+                updateTimer(); 
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(injectModifications, 2000);
+                });
+            } else {
+                setTimeout(injectModifications, 2000);
+            }
+            
+            setTimeout(injectModifications, 4000);
+            setTimeout(injectModifications, 6000);
+        })();
+    </script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69d991f683428a1c31aa6799/1jlsu4bjk';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+
+</html>
